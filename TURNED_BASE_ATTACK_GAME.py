@@ -1,5 +1,3 @@
-#     def attack(self, lawannya_siapa):
-#     def attacked(self, yang_nyerang_siapa, attack_yang_nyerang_berapa):
 class Hero:
     def __init__(self, name, HP, atk, defense):
         self.name = name
@@ -15,8 +13,6 @@ class Hero:
 
         damage = self.atk/self.opp_defense
         self.HP -= damage
-        
-        # print(f'HP {self.name} = {self.HP}')
         return self.HP
 
 confirm = 'y'
@@ -36,7 +32,7 @@ while confirm == 'y':
             continue
         else:
             break    
-    # hero_input_1 = int(user_input_1) - 1
+            
     while True:
         user_input_2 = input('Choose your second Hero!: ')
         if user_input_2 == user_input_1:
@@ -74,12 +70,12 @@ while confirm == 'y':
     while True:
         if i % 2 == 0:
             hero_available[hero_input_2].attack(hero_chosen_1_name, hero_available[hero_input_1].HP, hero_available[hero_input_1].atk, hero_available[hero_input_1].defense)        
-            # Append isi dictionary baru ke dictionary battle_report
+            # Append new directory into the battle report directory
             battle_report[i] = {'hero1': hero_available[hero_input_1].name, 'hp1': hero_available[hero_input_1].HP, 'hero2': hero_available[hero_input_2].name, 'hp2': hero_available[hero_input_2].HP, 'Attacker':hero_available[hero_input_1].name, 'Damage':hero_available[hero_input_2].atk/hero_available[hero_input_1].defense}
             i += 1
         else:
             hero_available[hero_input_1].attack(hero_chosen_2_name, hero_available[hero_input_2].HP, hero_available[hero_input_2].atk, hero_available[hero_input_2].defense)
-            # Append isi dictionary baru ke dictionary battle_report
+            # Append new directory into the battle report directory
             battle_report[i] = {'hero1': hero_available[hero_input_1].name, 'hp1': hero_available[hero_input_1].HP, 'hero2': hero_available[hero_input_2].name, 'hp2': hero_available[hero_input_2].HP, 'Attacker':hero_available[hero_input_2].name, 'Damage':hero_available[hero_input_1].atk/hero_available[hero_input_2].defense}
             i += 1
             
@@ -92,7 +88,6 @@ while confirm == 'y':
         else:
             continue
     
-    # print(battle_report)
     confirm_battle_report = 'y'
     while confirm_battle_report == 'y':
         while True:
